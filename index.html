@@ -1,199 +1,62 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#fff9fb">
-  <meta name="description" content="Little Bunny · 每日生活记录与成长档案">
-  <title>Little Bunny · 每日生活书</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#8d7ab8"><meta name="description" content="Little Bunny's Home · 小兔子的魔法生活手册与永久生活档案">
+<title>Little Bunny's Home · 小兔子的魔法生活手册</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="stars" aria-hidden="true"></div>
-  <header class="topbar">
-    <div class="brand"><span class="brand-bunny">🐇</span><div><strong>Little Bunny</strong><small>每日生活书 · Life Journal</small></div></div>
-    <div class="top-actions">
-      <button id="todayBtn" class="soft-btn">今天</button>
-      <button id="archiveBtn" class="soft-btn">📚 档案</button>
-      <button id="backupBtn" class="soft-btn">💾 备份</button>
-      <label class="soft-btn file-btn">恢复备份<input id="restoreInput" type="file" accept=".json" hidden></label>
-    </div>
-  </header>
+<div class="sky-layer" aria-hidden="true"><span class="star s1"></span><span class="star s2"></span><span class="star s3"></span><span class="star s4"></span><span class="star s5"></span><span class="star s6"></span><span class="cloud c1"></span><span class="cloud c2"></span></div>
+<header class="topbar">
+  <a class="brand" href="#home"><span class="brand-bunny">🐇</span><span><b>Little Bunny</b><small>小兔子的魔法生活手册</small></span></a>
+  <nav><a href="#diary">日记</a><a href="#media">书影音</a><a href="#garden">花园</a><a href="#tools">小工具</a><a href="#music">听歌</a><a href="#life">生活档案</a></nav>
+  <div class="top-actions"><button id="themeBtn" class="icon-btn" title="昼夜模式">☼</button><button id="archiveBtn" class="top-pill">📚 档案</button><button id="backupBtn" class="top-pill">💾 备份</button><label class="top-pill file-pill">恢复<input id="restoreInput" type="file" accept=".json" hidden></label></div>
+</header>
+<main>
+<section id="home" class="hero section">
+  <div class="hero-art"><div class="hero-copy"><p class="eyebrow">A tiny home for ordinary magic ✦</p><h1>欢迎来到<br><em>小兔子的家</em></h1><p class="lead">听歌、读书、种花、做饭、散步，把每一个普通的日子过成自己的童话。</p><div class="hero-meta"><div><span id="cnDate">—</span><strong id="cnTime">--:--</strong></div><div class="weather"><span id="weatherIcon">☁️</span><span id="weatherText">杭州天气加载中…</span></div></div></div>
+    <div class="scene"><div class="moon"></div><div class="hill h1"></div><div class="hill h2"></div><div class="fairy-castle"><div class="castle-tower ct1"><span></span></div><div class="castle-tower ct2"><span></span></div><div class="castle-tower ct3"><span></span></div><div class="castle-house"><i class="castle-door"></i><i class="castle-win cw1"></i><i class="castle-win cw2"></i><i class="castle-win cw3"></i></div></div>
+      <div class="room-glow"><span>📚</span><span>🏮</span><span>🍳</span><span>🛏️</span></div>
+      <div id="heroBunny" class="bunny bunny-hero" data-state="read"><span class="ear ear-l"></span><span class="ear ear-r"></span><span class="head"><i class="eye eye-l"></i><i class="eye eye-r"></i><i class="nose"></i><i class="cheek cheek-l"></i><i class="cheek cheek-r"></i></span><span class="body"></span><span class="paw paw-l"></span><span class="paw paw-r"></span><span class="foot foot-l"></span><span class="foot foot-r"></span><span class="prop prop-book">📖</span><span class="prop prop-cup">☕</span><span class="prop prop-water">💧</span></div>
+      <div class="garden-silhouette"><span>🌷</span><span>🌿</span><span>🥕</span><span>🌻</span><span>🌸</span><span>🌼</span></div><div class="firefly f1">✦</div><div class="firefly f2">✧</div><div class="firefly f3">✦</div>
+    </div></div>
+  <div class="daily-card glass"><div><span class="status-dot"></span><span id="bunnyStatus">兔兔正在读书</span></div><p id="bunnyThought">“今天也要留一点时间给喜欢的事情。”</p><div class="routine"><span class="routine-item active">🌅 起床</span><span class="routine-item">🌱 照顾花园</span><span class="routine-item">🍳 做饭</span><span class="routine-item">📖 读书</span><span class="routine-item">🚶 散步</span><span class="routine-item">🌙 睡觉</span></div></div>
+</section>
 
-  <main>
-    <section class="hero card">
-      <div class="castle-scene">
-        <div class="moon">☾</div>
-        <div class="cloud c1">☁</div><div class="cloud c2">☁</div>
-        <div class="castle">
-          <div class="tower t1">🏰</div><div class="tower t2">🏰</div>
-          <div class="garden">🌷 🌹 🌻 🌱 🥕</div>
-        </div>
-        <div class="bunny"><span>◡</span><i>🐰</i></div>
-      </div>
-      <div class="hero-copy">
-        <div class="eyebrow">MY LITTLE DAILY CASTLE</div>
-        <h1>把普通的一天，<br><em>好好留下来。</em></h1>
-        <p>心情、身体、吃饭、运动、花费、勇敢与后悔，都可以成为以后回头看见自己的小证据。</p>
-        <div class="date-nav">
-          <button id="prevDay">‹</button><input id="datePicker" type="date"><button id="nextDay">›</button>
-          <span id="saveState" class="save-state">自动保存已开启</span>
-        </div>
-      </div>
-    </section>
+<section id="diary" class="section"><div class="section-heading"><div><span class="section-kicker">01 · LITTLE MOMENTS</span><h2>日记 · 手掌</h2><p>把生活轻轻摊开，留下今天的光。</p></div><button class="text-btn" id="writeDiaryBtn">＋ 写一页日记</button></div><div class="diary-grid"><article class="photo-wall glass"><div class="photo p1"><div>☁️🌿</div><span>窗边的下午</span></div><div class="photo p2"><div>🥕🐇</div><span>收获胡萝卜</span></div><div class="photo p3"><div>📖☕</div><span>读书时间</span></div><div class="photo p4"><div>🍳🌷</div><span>今天做了饭</span></div><div class="photo p5"><div>🌻🎧</div><span>花园里的歌</span></div><div class="photo p6"><div>🌙🛏️</div><span>晚安</span></div></article><div id="diaryList" class="timeline"></div></div></section>
 
-    <section class="quick card">
-      <div><span class="q-label">今天</span><strong id="dateText"></strong></div>
-      <div class="quick-stat"><span>金币</span><b id="coinSummary">¥ 0</b></div>
-      <div class="quick-stat"><span>体重</span><b id="weightSummary">—</b></div>
-      <div class="quick-stat"><span>睡眠</span><b id="sleepSummary">—</b></div>
-      <button id="saveBtn" class="primary">✨ 保存今日记录</button>
-    </section>
+<section id="media" class="section"><div class="section-heading"><div><span class="section-kicker">02 · STORIES I LOVE</span><h2>书影音 · 记录</h2><p>喜欢的故事，会在生活里留下小小的光。</p></div></div><div class="media-grid"><article class="media-card glass"><span class="tag">READING</span><div class="cover book-cover">📚</div><h3>《人间值得》</h3><p>正在读 · 68%</p><div class="progress"><i style="width:68%"></i></div><a class="soft-btn" href="https://weread.qq.com/" target="_blank" rel="noopener">打开书架 ↗</a></article><article class="media-card glass"><span class="tag">WATCHING</span><div class="cover movie-cover">🎬</div><h3>最近看的电影</h3><p>把喜欢的镜头存下来。</p><div class="rating">★★★★★ <b>8.6</b></div></article><article class="media-card glass"><span class="tag">LISTENING</span><div class="cover music-cover">🎵</div><h3>今天的歌</h3><p>适合黄昏散步的旋律。</p><div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><button class="soft-btn" onclick="document.querySelector('#music').scrollIntoView({behavior:'smooth'})">去听歌</button></article></div></section>
 
-    <div id="journal" class="grid">
+<section id="garden" class="section"><div class="section-heading"><div><span class="section-kicker">03 · LITTLE GARDEN</span><h2>我的花园</h2><p>每天照顾一点点，花就会慢慢长大。</p></div><div class="garden-score">🌿 今日照料 <b id="gardenScore">0</b> / 7</div></div><div class="garden-wrap glass"><div class="garden-scene"><div class="sun"></div><div class="garden-fence"></div><div class="wind-line wl1">⌁</div><div class="wind-line wl2">⌁</div><div class="wind-line wl3">⌁</div><div class="garden-bunny bunny-small" id="gardenBunny"><span class="ear ear-l"></span><span class="ear ear-r"></span><span class="head"><i class="eye eye-l"></i><i class="eye eye-r"></i><i class="nose"></i></span><span class="body"></span><span class="foot foot-l"></span><span class="foot foot-r"></span></div><div class="plants" id="plantScene"></div></div><div class="plant-list" id="plantList"></div></div></section>
 
-      <section class="card section">
-        <div class="section-head"><div><span class="num">01</span><h2>今天是什么心情？</h2></div><span>可多选</span></div>
-        <div id="moodGrid" class="emoji-grid">
-          <button data-mood="🥰">🥰<small>幸福</small></button><button data-mood="😊">😊<small>开心</small></button>
-          <button data-mood="😌">😌<small>平静</small></button><button data-mood="🥹">🥹<small>委屈</small></button>
-          <button data-mood="😔">😔<small>低落</small></button><button data-mood="😢">😢<small>难过</small></button>
-          <button data-mood="😤">😤<small>生气</small></button><button data-mood="😰">😰<small>焦虑</small></button>
-          <button data-mood="😴">😴<small>困倦</small></button><button data-mood="🤩">🤩<small>兴奋</small></button>
-          <button data-mood="🫠">🫠<small>耗尽</small></button><button data-mood="🫶">🫶<small>被爱</small></button>
-        </div>
-        <input id="moodNote" class="input" placeholder="如果愿意，可以写一句今天的心情……">
-      </section>
+<section id="tools" class="section"><div class="section-heading"><div><span class="section-kicker">04 · LITTLE DESK</span><h2>工作小工具</h2><p>让工作轻一点，也给生活留一点空间。</p></div></div><div class="tools-grid"><article class="tool glass"><div class="tool-icon">☑️</div><h3>今日待办</h3><div class="todo-row"><input id="todoInput" placeholder="写下一件小事…"><button onclick="addTodo()">＋</button></div><ul id="todoList"></ul></article><article class="tool glass"><div class="tool-icon">🍅</div><h3>番茄钟</h3><div id="timer">25:00</div><div class="timer-actions"><button onclick="startTimer()">开始</button><button onclick="resetTimer()">重置</button></div></article><article class="tool glass"><div class="tool-icon">🧮</div><h3>快速计算</h3><input id="calc" class="calc-input" placeholder="例如：120*0.85+35"><button class="soft-btn full" onclick="calculate()">计算</button><div id="calcResult" class="calc-result">—</div></article><article class="tool glass"><div class="tool-icon">💴</div><h3>货币数字大写</h3><input id="moneyInput" class="calc-input" inputmode="decimal" placeholder="例如 123456.78"><button class="soft-btn full" onclick="moneyUpper()">转换人民币大写</button><div id="moneyResult" class="money-result">—</div></article></div></section>
 
-      <section class="card section">
-        <div class="section-head"><div><span class="num">02</span><h2>一日三餐</h2></div><span>照片 + 文字</span></div>
-        <div id="mealCards" class="meal-grid"></div>
-      </section>
+<section id="music" class="section"><div class="section-heading"><div><span class="section-kicker">05 · MUSIC ROOM</span><h2>点歌 · 网易云</h2><p>把喜欢的歌放进今天的空气里。</p></div></div><div class="music-room glass"><div class="record"><div class="record-hole"></div></div><div class="music-info"><span class="tag">NOW PLAYING</span><h3 id="trackTitle">我的网易云歌单</h3><p id="trackArtist">点击下面的按钮打开你的歌单</p><div class="player-actions"><button onclick="prevTrack()">◀</button><button class="play-btn" onclick="toggleAudio()">▶</button><button onclick="nextTrack()">▶</button></div><a id="neteaseLink" class="netease-btn" href="https://music.163.com/" target="_blank" rel="noopener">打开网易云歌单 ↗</a><small class="hint">把 script.js 顶部的 NETEASE_PLAYLIST_URL 换成你的歌单地址即可。</small></div><div class="playlist" id="playlist"></div></div></section>
 
-      <section class="card section">
-        <div class="section-head"><div><span class="num">03</span><h2>睡眠与时间</h2></div><span>把身体的节奏留下来</span></div>
-        <div class="time-grid">
-          <label>🌅 起床<input id="wakeTime" type="time"></label>
-          <label>🌙 睡觉<input id="sleepTime" type="time"></label>
-          <label>🌿 午休开始<input id="napStart" type="time"></label>
-          <label>🌿 午休结束<input id="napEnd" type="time"></label>
-          <label>🌃 夜晚起床次数<input id="nightWake" type="number" min="0" step="1" placeholder="0"></label>
-        </div>
-      </section>
+<section id="life" class="journal-section"><div class="journal-head"><div><span>06 · MY LIFE ARCHIVE</span><h2>每日生活档案</h2><p>所有日期独立保存，不会因为进入第二天而消失。</p></div><div class="journal-actions"><button id="todayBtn">今天</button><button id="journalArchiveBtn">📚 历史档案</button></div></div>
+<div class="date-bar"><button id="prevDay">‹</button><input id="datePicker" type="date"><button id="nextDay">›</button><span id="dateText"></span><span id="saveState">自动保存中</span></div>
+<div class="life-summary"><div><small>当天花费</small><b id="coinSummary">¥ 0.00</b></div><div><small>体重</small><b id="weightSummary">—</b></div><div><small>睡眠</small><b id="sleepSummary">—</b></div><div><small>起夜</small><b id="nightSummary">—</b></div></div>
+<div class="life-grid">
+<section class="life-card"><div class="life-title"><b>01</b><h3>今天是什么心情？</h3><span>可多选</span></div><div id="moodGrid" class="emoji-grid"><button data-mood="🥰">🥰<small>幸福</small></button><button data-mood="😊">😊<small>开心</small></button><button data-mood="😌">😌<small>平静</small></button><button data-mood="🥹">🥹<small>委屈</small></button><button data-mood="😔">😔<small>低落</small></button><button data-mood="😢">😢<small>难过</small></button><button data-mood="😤">😤<small>生气</small></button><button data-mood="😰">😰<small>焦虑</small></button><button data-mood="😴">😴<small>困倦</small></button><button data-mood="🤩">🤩<small>兴奋</small></button><button data-mood="🫠">🫠<small>耗尽</small></button><button data-mood="🫶">🫶<small>被爱</small></button></div><input id="moodNote" class="life-input" placeholder="如果愿意，可以写一句今天的心情……"></section>
+<section class="life-card"><div class="life-title"><b>02</b><h3>一日三餐</h3><span>照片＋文字</span></div><div id="mealCards" class="meal-grid"></div></section>
+<section class="life-card"><div class="life-title"><b>03</b><h3>睡眠与时间</h3><span>记录起夜时间与次数</span></div><div class="time-grid"><label>🌅 起床<input id="wakeTime" type="time"></label><label>🌙 睡觉<input id="sleepTime" type="time"></label><label>🌿 午休开始<input id="napStart" type="time"></label><label>🌿 午休结束<input id="napEnd" type="time"></label><label>🌃 起夜次数<input id="nightWake" type="number" min="0" step="1" placeholder="0"></label></div><div class="night-wake-box"><div class="night-wake-head"><b>每次起夜时间</b><button id="addWakeTime">＋添加时间</button></div><div id="nightWakeTimes" class="wake-list"></div></div></section>
+<section class="life-card"><div class="life-title"><b>04</b><h3>身体哪里不太舒服？</h3><span>点击人体肢体</span></div><div class="body-log"><div class="human-wrap"><div class="human" id="humanMap"><button data-part="头部" class="human-part head-part">◉</button><button data-part="颈部" class="human-part neck-part"></button><button data-part="胸口" class="human-part chest-part">♡</button><button data-part="腹部" class="human-part belly-part"></button><button data-part="左臂" class="human-part arm-left"></button><button data-part="右臂" class="human-part arm-right"></button><button data-part="左手" class="human-part hand-left"></button><button data-part="右手" class="human-part hand-right"></button><button data-part="左腿" class="human-part leg-left"></button><button data-part="右腿" class="human-part leg-right"></button><button data-part="左脚" class="human-part foot-left"></button><button data-part="右脚" class="human-part foot-right"></button></div></div><div class="body-form"><div id="selectedPart" class="selected-part">还没有选择部位</div><label>发生时间<input id="bodyTime" type="time"></label><label>感觉/程度<textarea id="bodyText" class="life-textarea" placeholder="例如：正中间绞痛、发冷、头晕……"></textarea></label><button id="addBodyLog" class="life-secondary">＋加入这次不舒服</button><div id="bodyLogs" class="log-list"></div></div></div></section>
+<section class="life-card"><div class="life-title"><b>05</b><h3>今天发现的奇妙事情</h3><span>照片也可以留下</span></div><textarea id="wonderText" class="life-textarea" placeholder="今天有什么让你觉得有趣、漂亮、奇妙或意外的事情？"></textarea><div class="upload-row"><label class="life-upload">📷 上传照片<input id="wonderFiles" type="file" accept="image/*" multiple hidden></label><div id="wonderPreview" class="thumbs"></div></div></section>
+<section class="life-card"><div class="life-title"><b>06</b><h3>今天花了多少金币维持生命</h3><span>钱也是生活的一部分</span></div><div class="money-row"><span>¥</span><input id="money" type="number" min="0" step="0.01" placeholder="0.00"><input id="moneyNote" class="life-input" placeholder="今天主要花在哪里？"></div></section>
+<section class="life-card wide-life"><div class="life-title"><b>07</b><h3>我今天做了什么？</h3><span>进步 / 勇敢 / 羞愧 / 懊恼 / 后悔</span></div><div class="reflection-grid"><label>🌱 进步<textarea id="progress" class="life-textarea"></textarea></label><label>🦋 勇敢<textarea id="brave" class="life-textarea"></textarea></label><label>🫣 羞愧<textarea id="ashamed" class="life-textarea"></textarea></label><label>😣 懊恼<textarea id="annoyed" class="life-textarea"></textarea></label><label>↩️ 后悔<textarea id="regret" class="life-textarea"></textarea></label><label>📝 今天做过的事<textarea id="doneThings" class="life-textarea"></textarea></label></div></section>
+<section class="life-card"><div class="life-title"><b>08</b><h3>身体数据</h3><span>今天的自己</span></div><div class="metrics"><label>⚖️ 体重（kg）<input id="weight" type="number" step="0.1" min="0"></label><label>◌ 体脂（%）<input id="bodyFat" type="number" step="0.1" min="0"></label></div></section>
+<section class="life-card"><div class="life-title"><b>09</b><h3>鼓励墙</h3><span>每天留一句给未来的自己</span></div><textarea id="encouragement" class="life-textarea quote" placeholder="“今天也已经很努力了。”"></textarea><div id="quoteHistory" class="quote-history"></div></section>
+<section class="life-card wide-life"><div class="life-title"><b>10</b><h3>电影 · 音乐 · 书籍 · 视频</h3><span>笔记＋照片 / PDF / Word / Excel</span></div><div class="media-form"><input id="mediaTitle" class="life-input" placeholder="作品名称"><select id="mediaType" class="life-input"><option>🎬 电影</option><option>🎵 音乐</option><option>📖 书籍</option><option>🎥 视频</option></select><textarea id="mediaNote" class="life-textarea" placeholder="观后感 / 阅读笔记 / 想留下的话……"></textarea><label class="life-upload">📎 添加照片、PDF、Word、Excel、CSV<input id="mediaFiles" type="file" accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.csv" multiple hidden></label><div id="mediaSelected" class="file-list"></div><button id="addMedia" class="life-secondary">＋加入今日收藏</button></div><div id="mediaList" class="media-list"></div></section>
+<section class="life-card"><div class="life-title"><b>11</b><h3>明日计划</h3><span>生活 / 学习 / 工作</span></div><label>🏡 生活<textarea id="planLife" class="life-textarea"></textarea></label><label>📚 学习<textarea id="planStudy" class="life-textarea"></textarea></label><label>💼 工作<textarea id="planWork" class="life-textarea"></textarea></label></section>
+<section class="life-card wide-life"><div class="life-title"><b>12</b><h3>备忘录</h3><span>未完成会一直保留，可选时间提醒</span></div><div class="memo-form"><input id="memoText" class="life-input" placeholder="要记住什么？"><input id="memoTime" type="datetime-local" class="life-input"><button id="addMemo" class="life-primary">＋添加提醒</button></div><div id="memoList" class="memo-list"></div></section>
+<section class="life-card"><div class="life-title"><b>13</b><h3>运动记录</h3><span>时间＋emoji＋照片</span></div><div id="exerciseTypes" class="exercise-types"><button data-ex="🚶">🚶<small>散步</small></button><button data-ex="🏃">🏃<small>跑步</small></button><button data-ex="🧘">🧘<small>瑜伽</small></button><button data-ex="🏋️">🏋️<small>力量</small></button><button data-ex="🚴">🚴<small>骑行</small></button><button data-ex="💃">💃<small>跳舞</small></button><button data-ex="🏊">🏊<small>游泳</small></button><button data-ex="🧹">🧹<small>家务</small></button></div><div class="two-col"><input id="exerciseMinutes" type="number" min="1" placeholder="运动分钟数"><input id="exerciseText" class="life-input" placeholder="简单记录一下"></div><label class="life-upload">📷 上传运动照片<input id="exerciseFiles" type="file" accept="image/*" multiple hidden></label><div id="exercisePreview" class="thumbs"></div><button id="addExercise" class="life-secondary add-exercise-real">＋加入运动记录</button><div id="exerciseList" class="exercise-list"></div></section>
+</div></section>
 
-      <section class="card section">
-        <div class="section-head"><div><span class="num">04</span><h2>身体哪里不太舒服？</h2></div><span>点一下身体部位</span></div>
-        <div class="body-log">
-          <div class="body-map" id="bodyMap">
-            <button data-part="头/脸" class="head">🙂</button><button data-part="喉咙" class="throat">◯</button>
-            <button data-part="胸口" class="chest">♡</button><button data-part="左臂" class="arm la">╲</button>
-            <button data-part="右臂" class="arm ra">╱</button><button data-part="腹部" class="belly">◉</button>
-            <button data-part="左腿" class="leg ll">╲</button><button data-part="右腿" class="leg rl">╱</button>
-          </div>
-          <div class="body-form">
-            <div class="selected-part" id="selectedPart">还没有选择部位</div>
-            <label>发生时间<input id="bodyTime" type="time"></label>
-            <label>感受<input id="bodyText" class="input" placeholder="例如：正中间绞痛、发冷、头晕……"></label>
-            <button id="addBodyLog" class="secondary">＋加入这次不舒服</button>
-            <div id="bodyLogs" class="log-list"></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="card section">
-        <div class="section-head"><div><span class="num">05</span><h2>今天发现的奇妙事情</h2></div><span>照片也可以留下</span></div>
-        <textarea id="wonderText" class="textarea" placeholder="今天有什么让你觉得有趣、漂亮、奇妙或意外的事情？"></textarea>
-        <div class="upload-row"><label class="upload"><span>📷 上传照片</span><input id="wonderFiles" type="file" accept="image/*" multiple hidden></label><div id="wonderPreview" class="thumbs"></div></div>
-      </section>
-
-      <section class="card section">
-        <div class="section-head"><div><span class="num">06</span><h2>今天花了多少金币维持生命</h2></div><span>钱也是生活的一部分</span></div>
-        <div class="money-row"><span>¥</span><input id="money" type="number" min="0" step="0.01" placeholder="0.00"><input id="moneyNote" class="input" placeholder="今天主要花在哪里？"></div>
-      </section>
-
-      <section class="card section wide">
-        <div class="section-head"><div><span class="num">07</span><h2>我今天做了什么？</h2></div><span>进步 / 勇敢 / 羞愧 / 懊恼 / 后悔</span></div>
-        <div class="reflection-grid">
-          <label><span>🌱 进步</span><textarea id="progress" class="textarea" placeholder="哪怕只是一点点……"></textarea></label>
-          <label><span>🦋 勇敢</span><textarea id="brave" class="textarea" placeholder="今天哪里勇敢了一次？"></textarea></label>
-          <label><span>🫣 羞愧</span><textarea id="ashamed" class="textarea" placeholder="可以诚实，但不必攻击自己。"></textarea></label>
-          <label><span>😣 懊恼</span><textarea id="annoyed" class="textarea" placeholder="什么事情让你懊恼？"></textarea></label>
-          <label><span>↩️ 后悔</span><textarea id="regret" class="textarea" placeholder="如果重来一次，我会……"></textarea></label>
-          <label><span>📝 今天做过的事</span><textarea id="doneThings" class="textarea" placeholder="工作、学习、出门、见人、休息……"></textarea></label>
-        </div>
-      </section>
-
-      <section class="card section">
-        <div class="section-head"><div><span class="num">08</span><h2>身体数据</h2></div><span>今天的自己</span></div>
-        <div class="metrics"><label>⚖️ 体重（kg）<input id="weight" type="number" step="0.1" min="0"></label><label>◌ 体脂（%）<input id="bodyFat" type="number" step="0.1" min="0"></label></div>
-      </section>
-
-      <section class="card section">
-        <div class="section-head"><div><span class="num">09</span><h2>鼓励墙</h2></div><span>每天留一句给未来的自己</span></div>
-        <textarea id="encouragement" class="textarea quote" placeholder="“今天也已经很努力了。”"></textarea>
-        <div id="quoteHistory" class="quote-history"></div>
-      </section>
-
-      <section class="card section wide">
-        <div class="section-head"><div><span class="num">10</span><h2>电影 · 音乐 · 书籍 · 视频</h2></div><span>笔记 + 图片 / PDF / Word / 表格</span></div>
-        <div class="media-form">
-          <input id="mediaTitle" class="input" placeholder="作品名称">
-          <select id="mediaType" class="input"><option>🎬 电影</option><option>🎵 音乐</option><option>📖 书籍</option><option>🎥 视频</option></select>
-          <textarea id="mediaNote" class="textarea" placeholder="观后感 / 阅读笔记 / 想留下的话……"></textarea>
-          <label class="upload"><span>📎 添加照片、PDF、Word、Excel、CSV</span><input id="mediaFiles" type="file" accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.csv" multiple hidden></label>
-          <div id="mediaSelected" class="file-list"></div>
-          <button id="addMedia" class="secondary">＋加入今日收藏</button>
-        </div>
-        <div id="mediaList" class="media-list"></div>
-      </section>
-
-      <section class="card section">
-        <div class="section-head"><div><span class="num">11</span><h2>明日计划</h2></div><span>分成三个小房间</span></div>
-        <label class="plan"><span>🏡 生活计划</span><textarea id="planLife" class="textarea" placeholder="吃饭、整理、休息、见人……"></textarea></label>
-        <label class="plan"><span>📚 学习计划</span><textarea id="planStudy" class="textarea" placeholder="明天想学什么？"></textarea></label>
-        <label class="plan"><span>💼 工作计划</span><textarea id="planWork" class="textarea" placeholder="明天最重要的工作是什么？"></textarea></label>
-      </section>
-
-      <section class="card section wide">
-        <div class="section-head"><div><span class="num">12</span><h2>备忘录</h2></div><span>未完成会一直保留</span></div>
-        <div class="memo-form">
-          <input id="memoText" class="input" placeholder="要记住什么？">
-          <input id="memoTime" type="datetime-local" class="input">
-          <button id="addMemo" class="primary">＋添加提醒</button>
-        </div>
-        <div id="memoList" class="memo-list"></div>
-      </section>
-
-      <section class="card section">
-        <div class="section-head"><div><span class="num">13</span><h2>运动记录</h2></div><span>时间 + emoji + 照片</span></div>
-        <div class="exercise-form">
-          <div class="exercise-types" id="exerciseTypes">
-            <button data-ex="🚶">🚶<small>散步</small></button><button data-ex="🏃">🏃<small>跑步</small></button>
-            <button data-ex="🧘">🧘<small>瑜伽</small></button><button data-ex="🏋️">🏋️<small>力量</small></button>
-            <button data-ex="🚴">🚴<small>骑行</small></button><button data-ex="💃">💃<small>跳舞</small></button>
-            <button data-ex="🏊">🏊<small>游泳</small></button><button data-ex="🧹">🧹<small>家务</small></button>
-          </div>
-          <div class="two-col"><input id="exerciseMinutes" type="number" min="1" placeholder="运动分钟数"><input id="exerciseText" class="input" placeholder="简单记录一下"></div>
-          <label class="upload"><span>📷 上传运动照片</span><input id="exerciseFiles" type="file" accept="image/*" multiple hidden></label>
-          <div id="exercisePreview" class="thumbs"></div>
-          <button id="addExercise" class="secondary">＋加入运动记录</button>
-        </div>
-        <div id="exerciseList" class="exercise-list"></div>
-      </section>
-    </div>
-
-    <section id="archivePanel" class="card archive-panel hidden">
-      <div class="section-head"><div><span class="num">∞</span><h2>生活档案</h2></div><button id="closeArchive" class="soft-btn">关闭</button></div>
-      <p class="muted">每一天都独立保存。点击日期可以回看；备份功能可把资料带到另一台设备。</p>
-      <div id="archiveList" class="archive-list"></div>
-    </section>
-
-    <div id="reminderToast" class="reminder hidden">
-      <div>🔔</div><div><strong id="reminderTitle">提醒</strong><p id="reminderBody"></p></div><button id="dismissReminder">知道了</button>
-    </div>
-  </main>
-
-  <footer>🐇 Little Bunny · 把生活一页一页留下来 · 数据默认保存在这台设备的浏览器中</footer>
-  <script src="script.js"></script>
-</body>
-</html>
+<section id="archivePanel" class="archive-panel hidden"><div class="journal-head"><div><span>∞ · HISTORY</span><h2>生活历史档案</h2><p>每一天独立保存。点日期即可回看。</p></div><button id="closeArchive" class="journal-actions">关闭</button></div><div id="archiveList" class="archive-list"></div></section>
+<div id="reminderToast" class="reminder hidden"><div>🔔</div><div><strong id="reminderTitle">提醒</strong><p id="reminderBody"></p></div><button id="dismissReminder">知道了</button></div>
+</main>
+<footer><div>🐇 <b>Little Bunny's Home</b> · 日出而作，日入而息。</div><div>所有生活记录按日期长期保留 · <span id="year"></span></div></footer>
+<audio id="bgAudio" loop preload="none"></audio><div id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body></html>
