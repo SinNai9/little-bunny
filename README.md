@@ -1,67 +1,40 @@
-# Little Bunny's Home 🐇
+# Little Bunny
 
-一个可以直接部署到 GitHub Pages 的静态个人主页。
+一个温柔的童话森林与兔兔小屋。当前仓库是新版第一阶段的前端原型，使用静态网页，可部署到 GitHub Pages。
 
-## 文件
+## 当前状态
+- [x] 森林首页与 CSS 立体场景
+- [x] CSS 兔兔基础跳跃、耳朵与身体动画
+- [x] 房屋入口与室内外切换
+- [x] 便签墙界面、文字和手绘编辑器
+- [x] 杭州天气读取（Open-Meteo），缓存上次成功数据
+- [x] 中国标准时间昼夜效果
+- [x] Supabase 数据库/RLS SQL 草案
+- [ ] Supabase 登录、密码找回和云端便签：需配置项目 URL 与公开 key 并执行 SQL 后验证
+- [ ] 真正的 3D 兔兔模型和完整动作资源
+- [ ] 完整四季植物与室内多房间细节
+- [ ] 网易云音乐播放器嵌入与实际播放验证
+- [ ] 真实设备、权限与跨日边界验收
 
-- `index.html`：主页
-- `style.css`：全部视觉与动画
-- `script.js`：北京时间、杭州天气、兔兔日程、花园互动、工具、音乐
-- `assets/fairy-home.png`：梦幻童话风视觉背景
-- `.nojekyll`：避免 GitHub Pages 对静态资源做 Jekyll 处理
+未配置 Supabase 前，便签不会被保存到云端；界面会明确提示配置，不会伪装成保存成功。
 
-## 1. 上传到 GitHub
+## Supabase 配置
+1. 创建 Supabase 项目并启用 Email/Password 登录。
+2. 在 Supabase SQL Editor 执行 supabase/schema.sql。
+3. 在 script.js 中填写项目 URL 与公开 anon/publishable key：
 
-新建一个仓库，把这些文件直接上传到仓库根目录。
+    const SUPABASE_URL = "https://YOUR_PROJECT.supabase.co";
+    const SUPABASE_ANON_KEY = "YOUR_PUBLIC_ANON_OR_PUBLISHABLE_KEY";
 
-如果你想要个人主页，仓库名建议使用：
+4. 在 Supabase Auth 设置中配置站点 URL、GitHub Pages URL 和密码重置跳转地址。
+5. 使用不同账号测试数据隔离，并测试跨日后数据库拒绝修改和删除。
+6. 不要将 service_role key 放入浏览器代码。
 
-`你的GitHub用户名.github.io`
+## GitHub Pages
+仓库包含 GitHub Actions 部署工作流。检查 Settings → Pages，确认来源为 GitHub Actions。预期网址为 https://sinnai9.github.io/little-bunny/，以仓库 Pages 设置为准。
 
-GitHub Pages 会以 `index.html` 作为入口文件。
+## 天气
+天气读取 Open-Meteo 公开接口，坐标固定为杭州。浏览器缓存最近一次成功响应；服务不可用时保留缓存和更新时间。
 
-## 2. 打开 GitHub Pages
-
-Repository → Settings → Pages → Build and deployment → Source 选择 GitHub Actions 或从 `main` 分支发布。
-
-最简单的静态站方式是选择 `main` / `root`。
-
-## 3. 修改网易云歌单
-
-打开 `script.js`，找到：
-
-`const NETEASE_PLAYLIST_URL = "https://music.163.com/";`
-
-替换成你的网易云歌单地址。
-
-### 关于“自动播放”
-
-浏览器通常会阻止网页首次打开时自动播放声音，这是浏览器的安全策略，不是 GitHub Pages 的问题。
-
-如果你有合法可公开访问的 mp3/ogg 音频文件，可以：
-
-1. 放进 `assets/music.mp3`
-2. 把 `AUDIO_URL` 改成 `assets/music.mp3`
-
-第一次点击页面后即可启动背景音乐。
-
-如果要直接播放网易云的具体歌曲，不能简单把网易云页面地址当作 mp3 音频地址。网易云歌单入口已经做好，点击会打开你的歌单。
-
-## 4. 天气
-
-页面使用 Open-Meteo 的公开天气接口，以杭州坐标和 `Asia/Shanghai` 时区读取天气。无需 API Key。
-
-## 5. 兔兔
-
-页面中的兔兔使用统一的原创 CSS/SVG 风格角色，不依赖多张不同兔子图片，因此读书、浇花、做饭、散步、睡觉时仍然是同一只兔兔。
-
-你可以继续把它升级成更丰富的逐帧动画或 Lottie 动画。
-
-
-## 可自定义
-
-- `script.js` 顶部 `NETEASE_PLAYLIST_URL`：网易云歌单
-- `script.js` 顶部 `WEREAD_SHELF_URL`：微信读书书架
-- `script.js` 顶部 `AUDIO_URL`：你有权使用的 mp3/ogg；浏览器仍可能阻止首次自动播放
-
-人民币大写工具、连续兔兔生活状态机、花园风吹动画和昼夜星空均已内置。
+## 当前限制
+兔兔、森林和室内是 CSS 场景原型，不是真正的 3D 模型。网易云音乐 iframe 需要在下一步嵌入并检查第三方页面与自动播放限制。完整季节植物切换尚未完成。替换文件不会清除旧 Git 提交历史；需独立执行并验证历史重置后才能称为完成。
