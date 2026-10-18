@@ -8,3 +8,33 @@ body{background:#f5f0e4;color:#5c5a49}header{background:#faf6eb;border-color:#e8
 .sticky-wall{background:#eee7d7;background-image:linear-gradient(#e3dac7 1px,transparent 1px);border:1px solid #e5dbc8}.sticky{background:var(--note-color,#f7e6a8);box-shadow:1px 3px 7px #5d543015;border:1px solid #887c5d10}.sticky:nth-child(3n+2),.sticky:nth-child(3n){background:var(--note-color,#f7e6a8)}.sticky:before{display:none}.sticky h3,.sticky p{color:#625c4c}.sticky time{color:#8b806a}.sticky button{opacity:.7}
 .drawing-tools{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:12px;color:#817a68;padding:4px 0}.note-colors{display:flex;gap:8px;align-items:center}.color-choice{width:25px;height:25px;border-radius:50%;background:var(--swatch);border:2px solid #fff9ed;box-shadow:0 0 0 1px #d8cfbc}.color-choice.active{box-shadow:0 0 0 2px #8b8a76}.pen-size{display:flex;align-items:center;gap:6px}.pen-size input{width:90px;accent-color:#8b9b7b}.secondary{padding:7px 10px;background:#eee6d8;border-radius:9px;color:#776e5c;font-size:11px}.drawing-paper{position:relative;border:1px solid #e6ddcc;border-radius:12px;background:#fffdf7;overflow:hidden}.drawing-paper canvas{display:block;width:100%;height:180px;touch-action:none;cursor:crosshair}.drawing-paper>span{position:absolute;right:10px;bottom:8px;font-size:10px;color:#c0b8a7;pointer-events:none}.note-drawing{display:block;width:100%;max-height:150px;object-fit:contain;margin:5px 0;border-radius:4px}.modal-backdrop{background:#645d4b66;backdrop-filter:blur(3px)}.house-interior,.mood-picker{background:#faf5e9;border:1px solid #e7dbc7;box-shadow:0 20px 60px #51493625}.interior-scene{background:linear-gradient(#c8dfe2 0 45%,#e7d9bf 45% 100%);border-color:#d3bea1}.interior-rug{background:#e8c9c1;border-color:#f1ded2}#toast{background:#78886b}
 @media(max-width:560px){.sticky-wall{grid-template-columns:repeat(2,minmax(0,1fr))}.drawing-paper canvas{height:160px}}
+
+/* Storybook manor inspired by the reference: stone walls, slate roofs, turret, timber gable */
+.cottage{left:38%;bottom:25%;width:390px;height:275px;filter:drop-shadow(0 9px 4px #5a60472b);transform-origin:bottom center}
+.cottage:hover{transform:translateY(-4px)}
+.cottage-main-roof{position:absolute;left:65px;top:37px;width:325px;height:133px;background:repeating-linear-gradient(0deg,#66717b 0 7px,#77818a 7px 9px);clip-path:polygon(0 100%,22% 22%,38% 55%,58% 0,79% 55%,100% 100%)}
+.cottage-gable{position:absolute;z-index:3;left:205px;top:60px;width:147px;height:128px;background:#f0e7d4;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.cottage-gable:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 0 18%,#705f50 18% 23%,transparent 23% 48%,#705f50 48% 53%,transparent 53% 77%,#705f50 77% 82%,transparent 82%),linear-gradient(0deg,transparent 0 25%,#705f50 25% 30%,transparent 30% 58%,#705f50 58% 63%,transparent 63%);clip-path:polygon(50% 0,100% 100%,0 100%)}
+.cottage-gable i{position:absolute;z-index:1;left:68px;top:46px;width:28px;height:35px;border:4px solid #756452;background:#b8d8e3}
+.cottage-gable b{position:absolute;z-index:1;left:73px;top:49px;width:4px;height:27px;background:#756452}
+.cottage-gable em{position:absolute;z-index:1;left:61px;top:60px;width:42px;height:4px;background:#756452}
+.cottage-chimney{position:absolute;z-index:1;left:94px;top:0;width:32px;height:85px;background:repeating-linear-gradient(0deg,#9b7563 0 9px,#b18b75 9px 11px);border-top:7px solid #6e6257}
+.cottage-wall{position:absolute;left:23px;bottom:0;width:367px;height:139px;background:repeating-linear-gradient(0deg,#b8b5a7 0 18px,#aaa99c 18px 20px);border:0;border-radius:0}
+.cottage-wall:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 35px,#d0cabb 35px 38px,transparent 38px 69px);opacity:.8}
+.cottage-window{position:absolute;z-index:2;top:24px;width:49px;height:57px;border:5px solid #8b7765;background:#b9dce7;box-shadow:inset 0 0 0 2px #f5e9d5}
+.cottage-window i{position:absolute;left:50%;top:0;height:100%;width:3px;background:#8b7765}
+.cottage-window:after{content:"";position:absolute;left:0;right:0;top:50%;height:3px;background:#8b7765}
+.cw1{left:70px}.cw2{left:139px}
+.cottage-door{position:absolute;z-index:3;left:204px;bottom:0;width:49px;height:86px;border:5px solid #74594b;border-radius:23px 23px 0 0;background:#896b57}
+.cottage-door:after{content:"";position:absolute;right:5px;top:43px;width:5px;height:5px;background:#f1d28d;border-radius:50%}
+.cottage-garage{position:absolute;z-index:2;bottom:0;width:62px;height:83px;border:5px solid #70594b;border-bottom:0;border-radius:17px 17px 0 0;background:repeating-linear-gradient(0deg,#8c6d55 0 10px,#795d49 10px 12px)}
+.cg1{right:2px}.cg2{right:66px}
+.cottage-turret{position:absolute;z-index:4;left:0;bottom:0;width:124px;height:222px}
+.turret-roof{position:absolute;left:0;top:0;width:124px;height:92px;background:repeating-linear-gradient(0deg,#66717b 0 7px,#77818a 7px 9px);clip-path:polygon(50% 0,100% 100%,0 100%)}
+.turret-wall{position:absolute;left:7px;bottom:0;width:110px;height:153px;border:5px solid #9e9a8c;border-radius:48% 48% 0 0;background:repeating-linear-gradient(0deg,#bcb9ac 0 16px,#a8a79b 16px 18px)}
+.turret-wall:before{content:"";position:absolute;left:21px;top:63px;width:59px;height:68px;border:5px solid #8a7765;border-radius:25px 25px 0 0;background:#b8dce6;box-shadow:inset 0 0 0 3px #eee2cf}
+.turret-wall i{position:absolute;z-index:1;left:49px;top:67px;width:4px;height:60px;background:#8a7765}
+.turret-wall:after{content:"";position:absolute;left:21px;top:95px;width:59px;height:4px;background:#8a7765;z-index:1}
+.house-sign{bottom:-32px;color:#fffdf0}
+@media(max-width:850px){.cottage{left:31%;bottom:25%;transform:scale(.78);transform-origin:bottom center}}
+@media(max-width:560px){.cottage{left:25%;bottom:26%;transform:scale(.57);transform-origin:bottom center}}
