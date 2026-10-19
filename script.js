@@ -1,5 +1,5 @@
-const SUPABASE_URL = "";
-const SUPABASE_ANON_KEY = "";
+const SUPABASE_URL = "https://naoueaoptycbhswvjtxn.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_UtA-jWk7OJiG784UkcIjWQ_6FwGBT-P";
 const HANGZHOU = { latitude: 30.2741, longitude: 120.1551 };
 const $ = id => document.getElementById(id);
 const state = { supabase:null,user:null,notes:[],drawing:null,editId:null,toastTimer:null };
