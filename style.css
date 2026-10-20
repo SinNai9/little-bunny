@@ -65,3 +65,27 @@ body{background:radial-gradient(ellipse at 50% 0%,#fffdf5 0,#f4f2e7 65%,#e9eee4 
 @keyframes home-arrive{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:850px){.topbar{height:82px}.world{border-radius:24px}.world-caption{top:7%}}
 @media(max-width:520px){.world{border-radius:18px}.world-caption{top:6%}.music-fallback{font-size:11px}}
+
+
+/* Storybook scene rebuild: layered hand-drawn landscape, not recolored geometric props */
+.world{background:#c8d9d1;isolation:isolate}
+.storybook-art{position:absolute;inset:0;width:100%;height:100%;z-index:0;display:block}
+.world>.sky-glow,.world>.sun,.world>.moon,.world>.cloud,.world>.far-hills,.world>.mid-hills,.world>.pine,.world>.big-tree,.world>.flower-patch,.world>.garden-label,.world>.path{display:none!important}
+.world>.cottage{position:absolute;z-index:4;right:13%;bottom:20%;width:285px;height:290px;filter:none;pointer-events:none}
+.world>.cottage>*:not(#enter-home){display:none!important}
+.world>.cottage #enter-home{display:block;pointer-events:auto;left:50px;bottom:-25px}
+.world>.bunny{z-index:6;left:46%;bottom:16%;transform:scale(1.12);filter:drop-shadow(3px 12px 8px #344b3438)}
+.bunny-body{border-radius:48% 52% 42% 45%;background:radial-gradient(ellipse at 30% 22%,#fff 0 18%,transparent 44%),linear-gradient(120deg,#fffefa 0%,#f8f5ed 55%,#d8d8cd 100%);box-shadow:inset -8px -5px 0 #d5d5ca,inset 5px 4px 10px #fff}
+.bunny-head{border-radius:49% 48% 46% 46%;background:radial-gradient(ellipse at 29% 20%,#fff 0 25%,transparent 55%),linear-gradient(135deg,#fffefa,#f4f1e8 75%,#d6d6cc);box-shadow:inset -5px -4px 0 #d8d8ce,inset 4px 3px 8px #fff}
+.ear{height:83px;border-radius:56% 58% 48% 48%;background:linear-gradient(90deg,#e5e3d9,#fffefa 42%,#d3d2c8);box-shadow:inset -3px -4px 0 #d1d0c7,0 3px 4px #65735b18}
+.ear:after{inset:10px 7px 12px;border-radius:58% 60% 45% 48%;background:linear-gradient(180deg,#d9a9ad9c,#efc8c7b8)}
+.world-caption{z-index:8;max-width:390px}
+.weather-note,.scene-time{z-index:8}
+.world-caption h1{ text-shadow:0 2px 18px #355b4445}
+.world:after{content:"";position:absolute;inset:0;z-index:7;pointer-events:none;background:linear-gradient(90deg,#5e785016,transparent 42%),linear-gradient(0deg,#344e3a25,transparent 28%)}
+.world.season-spring .storybook-art{filter:hue-rotate(9deg) saturate(.95)}
+.world.season-summer .storybook-art{filter:saturate(1.12) brightness(1.02)}
+.world.season-autumn .storybook-art{filter:hue-rotate(-17deg) saturate(1.12)}
+.world.season-winter .storybook-art{filter:saturate(.62) brightness(1.06)}
+@media(max-width:850px){.storybook-art{object-position:center}.world>.cottage{right:3%;transform:scale(.8);transform-origin:bottom right}.world>.bunny{left:42%;transform:scale(.9);transform-origin:bottom center}}
+@media(max-width:520px){.world>.cottage{right:-6%;bottom:18%;transform:scale(.58)}.world>.bunny{left:35%;bottom:18%;transform:scale(.72)}.world-caption{max-width:65%}.world-caption h1{font-size:30px}}
